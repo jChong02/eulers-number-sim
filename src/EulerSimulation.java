@@ -23,8 +23,8 @@ public class EulerSimulation {
 
         List<Integer> values = new ArrayList<>();
 
-        int numSimulations = 30000;
-
+        int numSimulations = 1000000;
+        double countSum = 0;
 
         for(int i = 0; i < numSimulations; i++) {
             int count = 0;
@@ -33,11 +33,13 @@ public class EulerSimulation {
                 sum += Math.random();
                 count++;
                 if (sum > 1) {
-                    values.add(count);
+                    //values.add(count);
+                    countSum += count;
                     count = 0;
                 }
             }
-            series1.add(i+1,values.stream().mapToInt(e -> e).average().getAsDouble());
+            //series1.add(i+1,values.stream().mapToInt(e -> e).average().getAsDouble());
+            series1.add(i+1, countSum/(i+1));
         }
         dataset.addSeries(series1);
 
@@ -47,7 +49,6 @@ public class EulerSimulation {
                 "Average summations", // Y-Axis Label
                 dataset // Dataset for the Chart
         );
-
 
 
 
