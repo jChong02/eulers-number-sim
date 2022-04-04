@@ -79,10 +79,13 @@ public class EulerSimulation {
                 "Average summations", // Y-Axis Label
                 dataset // Dataset for the Chart
         );
-        
+
+        Double percentError = (Math.abs((estimatedValue - Math.exp(1)))/Math.exp(1)) * 100;
+        String strPercentError = String.format("%.5f", percentError);
+
         System.out.println("Estimated value of e: " + estimatedValue);
-        System.out.println("Percent error between estimated value and theoretical value of Euler's Number: " +
-                Math.abs(estimatedValue - Math.exp(1)) * 100 + "%.");
+        System.out.println("Percent error between estimated value and theoretical value of Euler's Number: "
+                + strPercentError + "%.");
 
         System.out.println("Please do not close the program while the graph is being generated.");
 
