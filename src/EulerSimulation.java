@@ -44,6 +44,7 @@ public class EulerSimulation {
             }
         }while(!validInput);
 
+        consoleScanner.close();
 
 
 
