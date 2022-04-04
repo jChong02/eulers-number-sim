@@ -44,7 +44,7 @@ public class EulerSimulation {
             }
         }while(!validInput);
 
-        System.out.println(numSimulations);
+        consoleScanner.close();
 
 
 
